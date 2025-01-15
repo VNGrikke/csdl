@@ -1,0 +1,12 @@
+a.
+    - thieu PRIMARY KEY
+    - thieu NOT NULL
+    - khong co rang buoc CHECK cho cot Diem 
+
+b. 
+
+create table Diems (
+    MaSV varchar(20) primary key,
+    Diem int not null,
+    check (Diem >= 0 and Diem <= 10)
+);

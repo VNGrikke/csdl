@@ -1,0 +1,15 @@
+a.
+    PRIMARY KEY: Ràng buộc xác định cột hoặc nhóm cột có giá trị duy nhất, không trùng lặp.
+    vd: bang student co cot studentId co rang buoc la PRIMARY KEY
+
+    FOREIGN KEY: Ràng buộc xác định mối quan hệ giữa hai bảng, đảm bảo tính toàn vẹn của dữ liệu giữa các bảng.
+    vd: bang student co cot classId co rang buoc la FOREIGN KEY
+
+    NOT NULL: Ràng buộc yêu cầu cột không được để trống.
+    vd: bang student co cot studentName co rang buoc la NOT NULL
+
+b.
+    Tối ưu hóa bộ nhớ và hiệu suất của cơ sở dữ liệu.
+
+	Đảm bảo tính chính xác và hợp lý của dữ liệu trong cơ sở dữ liệu.
+
