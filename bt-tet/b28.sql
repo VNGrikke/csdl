@@ -1,0 +1,5 @@
+SELECT MaKhoa, 
+       SUM(CASE WHEN Phai = 'Nam' THEN 1 ELSE 0 END) AS SoNam,
+       SUM(CASE WHEN Phai = 'Nữ' THEN 1 ELSE 0 END) AS SoNu
+FROM DMSV
+GROUP BY MaKhoa;

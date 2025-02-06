@@ -1,0 +1,3 @@
+SELECT YEAR(CURDATE()) - YEAR(NgaySinh) AS Tuoi, COUNT(*) AS SoLuong FROM DMSV
+GROUP BY Tuoi
+ORDER BY Tuoi;

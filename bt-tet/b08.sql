@@ -1,0 +1,2 @@
+SELECT MaSV, CONCAT(HoSV, ' ', TenSV) AS HoTen, MaKhoa, HocBong FROM DMSV 
+WHERE HocBong > 100000 ORDER BY MaKhoa DESC;

@@ -1,0 +1,2 @@
+SELECT MaSV, NgaySinh, NoiSinh, HocBong FROM DMSV 
+WHERE NgaySinh BETWEEN '1991-01-01' AND '1992-06-05';

@@ -1,0 +1,2 @@
+SELECT CONCAT(HoSV, ' ', TenSV) AS HoTen, Phai, NgaySinh FROM DMSV 
+WHERE YEAR(NgaySinh) = 1990 AND MONTH(NgaySinh) BETWEEN 1 AND 3;

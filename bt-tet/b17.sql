@@ -1,0 +1,2 @@
+SELECT CONCAT(HoSV, ' ', TenSV) AS HoTen, YEAR(CURDATE()) - YEAR(NgaySinh) AS Tuoi, HocBong 
+FROM DMSV WHERE YEAR(CURDATE()) - YEAR(NgaySinh) > 20;

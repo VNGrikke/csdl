@@ -1,0 +1,1 @@
+SELECT * FROM DMSV WHERE HoSV LIKE '%Thị%';

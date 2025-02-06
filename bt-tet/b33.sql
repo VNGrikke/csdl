@@ -1,0 +1,4 @@
+SELECT MaSV, COUNT(*) AS SoLanThi FROM KetQua
+WHERE LanThi > 1
+GROUP BY MaSV
+HAVING SoLanThi > 2;

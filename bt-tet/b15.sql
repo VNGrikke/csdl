@@ -1,0 +1,1 @@
+SELECT * FROM DMSV WHERE Phai = 'Nữ' AND TenSV LIKE '%N%';

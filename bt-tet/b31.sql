@@ -1,0 +1,3 @@
+SELECT NoiSinh, COUNT(*) AS SoSinhVien FROM DMSV
+GROUP BY NoiSinh
+HAVING SoSinhVien > 2;

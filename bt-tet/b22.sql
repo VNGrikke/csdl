@@ -1,0 +1,3 @@
+SELECT COUNT(*) AS TongSV, 
+       SUM(CASE WHEN Phai = 'Nữ' THEN 1 ELSE 0 END) AS TongSVNu 
+FROM DMSV;

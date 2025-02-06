@@ -1,0 +1,1 @@
+SELECT MaSV, CONCAT(HoSV, ' ', TenSV) AS HoTen, Phai, NgaySinh FROM DMSV ORDER BY Phai DESC;
