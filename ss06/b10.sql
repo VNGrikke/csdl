@@ -98,7 +98,7 @@ join doctors d on a.doctorid = d.doctorid
 join medicalrecords mr on a.patientid = mr.patientid and a.doctorid = mr.doctorid
 order by a.appointmentdate asc;
 
-
+  
 
 select 
     upper(concat('bệnh nhân: ', p.fullname, ' - bác sĩ: ', d.fullname)) as info,
