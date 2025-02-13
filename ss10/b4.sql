@@ -11,7 +11,7 @@ end;
 // delimiter ;
 
 set @city_id = 34;
-
-call UpdateCityPopulation(@city_id, 15112005);
+set @new_population = 15112005;
+call UpdateCityPopulation(@city_id, @new_population);
 
 drop procedure UpdateCityPopulation;

@@ -2,12 +2,12 @@ delimiter //
 	create procedure GetCountriesWithLargeCities ()
 	begin
 		select 
-			country.name as countryname, 
-			sum(city.population) as totalpopulation
-		from world.city city
-		inner join world.country country on city.countrycode = country.code
-		where country.continent = 'asia'
-		group by country.name
+			ct.name as countryname, 
+			sum(c.population) as totalpopulation
+		from world.city c
+		inner join world.country ct on c.countrycode = ct.code
+		where ct.continent = 'asia'
+		group by ct.name
 		having totalpopulation > 10000000
 		order by totalpopulation desc;
 	end
@@ -16,3 +16,4 @@ delimiter //
 call GetCountriesWithLargeCities ();
 
 drop procedure GetCountriesWithLargeCities ;
+
