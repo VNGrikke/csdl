@@ -6,7 +6,7 @@ select
 from world.country ct
 join world.countrylanguage ctlg on ctlg.CountryCode = ct.Code
 where ctlg.IsOfficial = 'T';
-
+	
 select * from OfficialLanguageView;
 
 create index idx_city_name on world.city(Name);
@@ -34,3 +34,4 @@ end;
 call GetSpecialCountriesAndCities('English');
 
 drop procedure GetSpecialCountriesAndCities;
+
