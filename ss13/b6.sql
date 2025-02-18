@@ -3,11 +3,14 @@ create table enrollments_history (
     student_id int,
     course_id int,
     action varchar(50),
-    timestamp datetime default(current_timestamp)
+    timestamp datetime default(current_timestamp),
+    foreign key (student_id) references students(student_id),
+    foreign key (course_id) references courses(course_id)
 );
 
 
 delimiter //
+set autocommit = 0;
 create procedure register_course2(p_student_id int, p_course_id int )
 begin
 	start transaction;    
