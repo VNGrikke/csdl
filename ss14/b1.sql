@@ -73,8 +73,6 @@ begin
 end;
 // delimiter ;
 
--- delimiter //
--- // delimiter ;
 
 -- 3
 delimiter //
@@ -153,3 +151,5 @@ drop trigger if exists check_stock_before_update;
 drop trigger if exists update_total_after_update;
 drop trigger if exists prevent_delete_completed_order;
 drop trigger if exists return_stock_after_delete;
+
+
