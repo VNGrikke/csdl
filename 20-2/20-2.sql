@@ -147,6 +147,7 @@ HAVING so_luong > 100
 ORDER BY so_luong DESC;
 
 
+
 -- 7
 
 SELECT 
@@ -168,9 +169,9 @@ WHERE p.price > (SELECT AVG(price) FROM products);
 
 
 SELECT
-    customer_id,
-    customer_name,
-    SUM(o.total_amount) AS tong_chi_tieu,
+    c.customer_id,
+    c.customer_name,
+    SUM(o.total_amount) AS tong_chi_tieu
 FROM orders o
 JOIN customers c ON c.customer_id = o.customer_id
 GROUP BY c.customer_id
@@ -256,7 +257,7 @@ BEGIN
     WHERE order_id = p_order_id;
 END 
 // DELIMITER ;
-CALL proc_cal_total_amount_by_order(3, @total);
+CALL proc_cal_total_amount_by_order(1, @total);
 SELECT @total;
 
 
@@ -270,11 +271,9 @@ FOR EACH ROW
 BEGIN
     DECLARE product_qty INT;
     DECLARE out_of_stock CONDITION FOR SQLSTATE '45000';
-
     SELECT quantity INTO product_qty
     FROM Products
     WHERE product_id = NEW.product_id;
-
     IF product_qty < NEW.quantity THEN
         SIGNAL out_of_stock SET MESSAGE_TEXT = 'Số lượng sản phẩm trong kho không đủ';
     ELSE
@@ -312,6 +311,7 @@ BEGIN
 
     IF order_exists = 0 THEN
         SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Không tồn tại mã hóa đơn';
+		ROLLBACK;
     END IF;
 
     INSERT INTO OrderDetails (order_id, product_id, quantity, unit_price)
